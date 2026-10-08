@@ -1,0 +1,1169 @@
+/* ==========================================
+   VARIABLES
+   ========================================== */
+
+:root {
+  --bg-main: #071A33;
+  --bg-secondary: #0D2747;
+  --bg-card: #0A203D;
+
+  --blue-primary: #1677FF;
+  --blue-hover: #0F62E6;
+  --accent-cyan: #38BDF8;
+
+  --white: #F8FAFC;
+  --text-secondary: #A9B8CC;
+
+  --border: rgba(169, 184, 204, 0.12);
+
+  --shadow-blue: 0 8px 30px rgba(22, 119, 255, 0.25);
+
+  --transition: all 0.3s ease;
+}
+
+
+/* ==========================================
+   RESET
+   ========================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg-main);
+  color: var(--white);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+
+/* ==========================================
+   HEADER
+   ========================================== */
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  background: rgba(7, 26, 51, 0.88);
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  border-bottom: 1px solid var(--border);
+
+  z-index: 1000;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 1rem 6%;
+}
+
+
+/* LOGO */
+
+.logo {
+  font-family: 'Space Grotesk', sans-serif;
+
+  font-size: 1.5rem;
+  font-weight: 700;
+
+  letter-spacing: 1px;
+
+  color: var(--white);
+}
+
+.logo span {
+  color: var(--accent-cyan);
+
+  
+}
+
+
+/* NAV */
+
+nav ul {
+  display: flex;
+  align-items: center;
+  gap: 1.7rem;
+}
+
+nav a {
+  font-size: 0.9rem;
+  font-weight: 500;
+
+  color: var(--text-secondary);
+
+  transition: var(--transition);
+}
+
+nav a:hover,
+nav a.active {
+  color: var(--accent-cyan);
+}
+
+
+/* ==========================================
+   SECCIONES GENERALES
+   ========================================== */
+
+section {
+  padding: 7rem 8% 6rem;
+
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+}
+
+.section-title {
+  font-size: 2.5rem;
+
+  font-weight: 700;
+
+  text-align: center;
+
+  margin-bottom: 1rem;
+}
+
+.section-title span {
+  color: var(--accent-cyan);
+}
+
+.section-subtitle {
+  text-align: center;
+
+  color: var(--text-secondary);
+
+  max-width: 650px;
+
+  margin: 0 auto 4rem;
+
+  font-size: 1rem;
+}
+
+
+/* ==========================================
+   HERO
+   ========================================== */
+
+#inicio {
+  position: relative;
+
+  text-align: center;
+
+  align-items: center;
+
+  background:
+    radial-gradient(
+      circle at 50% 30%,
+      rgba(22, 119, 255, 0.18),
+      transparent 45%
+    ),
+    linear-gradient(
+      135deg,
+      var(--bg-main),
+      var(--bg-secondary)
+    );
+}
+
+.hero-content {
+  max-width: 900px;
+}
+
+
+/* BADGE */
+
+.hero-badge {
+  display: inline-block;
+
+  padding: 0.5rem 1rem;
+
+  border-radius: 50px;
+
+  background: rgba(56, 189, 248, 0.08);
+
+  border: 1px solid rgba(56, 189, 248, 0.2);
+
+  color: var(--accent-cyan);
+
+  font-size: 0.85rem;
+
+  font-weight: 600;
+
+  margin-bottom: 1.5rem;
+}
+
+
+/* HERO TITLE */
+
+#inicio h1 {
+  font-size: clamp(2.7rem, 6vw, 4.8rem);
+
+  line-height: 1.05;
+
+  letter-spacing: -2px;
+
+  margin-bottom: 1.5rem;
+}
+
+#inicio h1 span {
+  color: var(--accent-cyan);
+}
+
+
+/* HERO TEXT */
+
+#inicio p {
+  max-width: 700px;
+
+  margin: 0 auto 2.5rem;
+
+  font-size: 1.1rem;
+
+  color: var(--text-secondary);
+
+  line-height: 1.8;
+}
+
+
+/* HERO BUTTONS */
+
+.hero-buttons {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 1rem;
+
+  flex-wrap: wrap;
+}
+
+
+/* ==========================================
+   BOTONES
+   ========================================== */
+
+.btn {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 0.5rem;
+
+  background: var(--blue-primary);
+
+  color: var(--white);
+
+  padding: 0.9rem 1.8rem;
+
+  border-radius: 10px;
+
+  font-weight: 600;
+
+  font-size: 0.95rem;
+
+  border: 1px solid transparent;
+
+  transition: var(--transition);
+
+  box-shadow: var(--shadow-blue);
+}
+
+.btn:hover {
+  background: var(--blue-hover);
+
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 12px 35px rgba(22, 119, 255, 0.35);
+}
+
+
+/* BOTÓN OUTLINE */
+
+.btn-outline {
+  background: transparent;
+
+  border-color: rgba(56, 189, 248, 0.4);
+
+  color: var(--accent-cyan);
+
+  box-shadow: none;
+}
+
+.btn-outline:hover {
+  background: rgba(56, 189, 248, 0.08);
+
+  border-color: var(--accent-cyan);
+}
+
+
+/* ==========================================
+   PRESENTACIÓN MINI
+   ========================================== */
+
+.intro-services {
+  background: var(--bg-main);
+
+  min-height: auto;
+}
+
+.services-mini-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 1.5rem;
+
+  max-width: 1100px;
+
+  width: 100%;
+
+  margin: 0 auto;
+}
+
+.mini-card {
+  background: var(--bg-card);
+
+  border: 1px solid var(--border);
+
+  border-radius: 16px;
+
+  padding: 2rem;
+
+  transition: var(--transition);
+}
+
+.mini-card:hover {
+  transform: translateY(-6px);
+
+  border-color: rgba(56, 189, 248, 0.4);
+
+  box-shadow: var(--shadow-blue);
+}
+
+.mini-icon {
+  font-size: 2rem;
+
+  margin-bottom: 1rem;
+}
+
+.mini-card h3 {
+  margin-bottom: 0.7rem;
+}
+
+.mini-card p {
+  color: var(--text-secondary);
+
+  font-size: 0.9rem;
+}
+
+
+/* ==========================================
+   SERVICIOS
+   ========================================== */
+
+#servicios {
+  background: var(--bg-secondary);
+}
+
+.services-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 2rem;
+}
+
+.service-card {
+  position: relative;
+
+  background: var(--bg-main);
+
+  border: 1px solid var(--border);
+
+  border-radius: 18px;
+
+  padding: 2.5rem 2rem;
+
+  transition: var(--transition);
+
+  display: flex;
+
+  flex-direction: column;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+
+  border-color: rgba(56, 189, 248, 0.45);
+
+  box-shadow: var(--shadow-blue);
+}
+
+.service-number {
+  color: var(--accent-cyan);
+
+  font-size: 0.8rem;
+
+  font-weight: 700;
+
+  margin-bottom: 1.5rem;
+}
+
+.service-card h3 {
+  font-size: 1.35rem;
+
+  margin-bottom: 1rem;
+}
+
+.service-card .price {
+  color: var(--accent-cyan);
+
+  font-size: 1.3rem;
+
+  font-weight: 700;
+
+  margin-bottom: 1rem;
+}
+
+.service-description {
+  color: var(--text-secondary);
+
+  font-size: 0.9rem;
+
+  margin-bottom: 1.5rem;
+}
+
+.service-card ul {
+  margin-bottom: 2rem;
+}
+
+.service-card li {
+  color: var(--text-secondary);
+
+  font-size: 0.9rem;
+
+  margin-bottom: 0.75rem;
+
+  padding-left: 1.2rem;
+
+  position: relative;
+}
+
+.service-card li::before {
+  content: "✓";
+
+  position: absolute;
+
+  left: 0;
+
+  color: var(--accent-cyan);
+
+  font-weight: bold;
+}
+
+.card-btn {
+  width: 100%;
+
+  margin-top: auto;
+
+  text-align: center;
+}
+
+
+/* ==========================================
+   PLANES
+   ========================================== */
+
+#planes {
+  background: var(--bg-main);
+}
+
+.plans-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(280px, 500px));
+
+  justify-content: center;
+
+  gap: 2rem;
+}
+
+.plan-card {
+  position: relative;
+
+  background: var(--bg-card);
+
+  border: 1px solid var(--border);
+
+  border-radius: 20px;
+
+  padding: 2.5rem;
+
+  transition: var(--transition);
+}
+
+.plan-card:hover {
+  transform: translateY(-7px);
+
+  border-color: rgba(56, 189, 248, 0.4);
+}
+
+.plan-featured {
+  border: 1px solid var(--blue-primary);
+
+  box-shadow:
+    0 0 35px rgba(22, 119, 255, 0.12);
+}
+
+.plan-popular {
+  position: absolute;
+
+  top: -13px;
+
+  right: 20px;
+
+  background: var(--blue-primary);
+
+  padding: 0.35rem 0.8rem;
+
+  border-radius: 50px;
+
+  font-size: 0.7rem;
+
+  font-weight: 700;
+}
+
+.plan-label {
+  color: var(--accent-cyan);
+
+  font-weight: 700;
+
+  font-size: 0.9rem;
+}
+
+.plan-card h3 {
+  font-size: 1.4rem;
+
+  margin: 1rem 0;
+}
+
+.plan-price {
+  font-size: 2rem;
+
+  font-weight: 700;
+
+  color: var(--white);
+
+  margin-bottom: 1rem;
+}
+
+.plan-card p {
+  color: var(--text-secondary);
+
+  font-size: 0.9rem;
+
+  margin-bottom: 1.5rem;
+}
+
+.plan-card ul {
+  margin-bottom: 2rem;
+}
+
+.plan-card li {
+  color: var(--text-secondary);
+
+  margin-bottom: 0.7rem;
+
+  font-size: 0.9rem;
+}
+
+.plan-card li::before {
+  content: "✓ ";
+
+  color: var(--accent-cyan);
+
+  font-weight: bold;
+}
+
+
+/* ==========================================
+   PORTFOLIO
+   ========================================== */
+
+#portfolio {
+  background: var(--bg-secondary);
+}
+
+.portfolio-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, 1fr);
+
+  gap: 2rem;
+
+  max-width: 1100px;
+
+  width: 100%;
+
+  margin: 0 auto;
+}
+
+.portfolio-card {
+  overflow: hidden;
+
+  background: var(--bg-main);
+
+  border: 1px solid var(--border);
+
+  border-radius: 18px;
+
+  transition: var(--transition);
+}
+
+.portfolio-card:hover {
+  transform: translateY(-6px);
+
+  border-color: rgba(56, 189, 248, 0.4);
+}
+
+.portfolio-image {
+  height: 230px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background:
+    linear-gradient(
+      135deg,
+      #0D2747,
+      #071A33
+    );
+
+  color: var(--accent-cyan);
+
+  font-family: 'Space Grotesk', sans-serif;
+
+  font-size: 1.5rem;
+
+  font-weight: 700;
+}
+
+.portfolio-content {
+  padding: 2rem;
+}
+
+.portfolio-category {
+  color: var(--accent-cyan);
+
+  font-size: 0.75rem;
+
+  font-weight: 700;
+
+  text-transform: uppercase;
+
+  letter-spacing: 1px;
+}
+
+.portfolio-content h3 {
+  margin: 0.7rem 0;
+}
+
+.portfolio-content p {
+  color: var(--text-secondary);
+
+  font-size: 0.9rem;
+
+  margin-bottom: 1.2rem;
+}
+
+.project-link {
+  color: var(--accent-cyan);
+
+  font-weight: 600;
+
+  font-size: 0.9rem;
+
+  transition: var(--transition);
+}
+
+.project-link:hover {
+  opacity: 0.7;
+
+  text-decoration: underline;
+}
+
+
+/* ==========================================
+   CÓDIGO EN FAMILIA
+   ========================================== */
+
+#familia {
+  background:
+    radial-gradient(
+      circle at 20% 50%,
+      rgba(22, 119, 255, 0.15),
+      transparent 40%
+    ),
+    var(--bg-main);
+
+  min-height: 70vh;
+}
+
+.family-container {
+  max-width: 850px;
+
+  margin: 0 auto;
+
+  text-align: center;
+}
+
+.family-text h2 {
+  font-size: 2.7rem;
+
+  margin: 1rem 0;
+}
+
+.family-text h2 span {
+  color: var(--accent-cyan);
+}
+
+.family-text p {
+  color: var(--text-secondary);
+
+  max-width: 650px;
+
+  margin: 0 auto 1.2rem;
+}
+
+
+/* ==========================================
+   SOBRE MÍ
+   ========================================== */
+
+#sobre-mi {
+  background: var(--bg-secondary);
+}
+
+.about-container {
+  display: grid;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  gap: 4rem;
+
+  align-items: center;
+}
+
+.about-text h3 {
+  font-size: 2rem;
+
+  margin-bottom: 1.2rem;
+}
+
+.about-text p {
+  color: var(--text-secondary);
+
+  margin-bottom: 1.2rem;
+}
+
+.projects-preview {
+  background: var(--bg-main);
+
+  padding: 2rem;
+
+  border-radius: 18px;
+
+  border: 1px solid var(--border);
+}
+
+.projects-preview h4 {
+  color: var(--accent-cyan);
+
+  font-size: 1.2rem;
+
+  margin-bottom: 1rem;
+}
+
+.project-item {
+  padding: 1rem 0;
+
+  border-bottom: 1px solid var(--border);
+}
+
+.project-item:last-child {
+  border-bottom: none;
+}
+
+.project-item span {
+  color: var(--text-secondary);
+
+  font-size: 0.85rem;
+}
+
+
+/* ==========================================
+   LOCUCIÓN
+   ========================================== */
+
+#locucion {
+  background:
+    linear-gradient(
+      135deg,
+      #081D38,
+      #0D2747
+    );
+
+  text-align: center;
+
+  min-height: 65vh;
+}
+
+.voice-container {
+  max-width: 750px;
+
+  margin: 0 auto;
+}
+
+.voice-container h2 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+
+  margin: 1rem 0 1.5rem;
+}
+
+.voice-container h2 span {
+  color: var(--accent-cyan);
+}
+
+.voice-container p {
+  color: var(--text-secondary);
+
+  margin-bottom: 2rem;
+
+  font-size: 1.05rem;
+}
+
+
+/* ==========================================
+   CONTACTO
+   ========================================== */
+
+#contacto {
+  background: var(--bg-main);
+
+  text-align: center;
+}
+
+.contact-box {
+  max-width: 650px;
+
+  width: 100%;
+
+  margin: 0 auto;
+
+  background: var(--bg-card);
+
+  padding: 3rem 2rem;
+
+  border-radius: 20px;
+
+  border: 1px solid var(--border);
+}
+
+.contact-box h3 {
+  font-size: 1.7rem;
+
+  margin-bottom: 1rem;
+}
+
+.contact-box p {
+  color: var(--text-secondary);
+
+  margin-bottom: 2rem;
+}
+
+.contact-actions {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 1rem;
+
+  align-items: center;
+}
+
+.btn-whatsapp {
+  background: #25D366;
+
+  box-shadow:
+    0 8px 25px rgba(37, 211, 102, 0.25);
+
+  width: 100%;
+}
+
+.btn-whatsapp:hover {
+  background: #20ba5a;
+}
+
+.contact-email {
+  color: var(--text-secondary);
+
+  font-size: 0.9rem;
+}
+
+.contact-email span {
+  color: var(--accent-cyan);
+}
+
+
+/* ==========================================
+   FOOTER
+   ========================================== */
+
+footer {
+  background: #041326;
+
+  border-top: 1px solid var(--border);
+
+  padding: 2rem 5%;
+
+  text-align: center;
+
+  color: var(--text-secondary);
+
+  font-size: 0.8rem;
+}
+
+footer p {
+  margin-bottom: 0.4rem;
+}
+
+
+/* ==========================================
+   RESPONSIVE
+   ========================================== */
+
+@media (max-width: 1000px) {
+
+  .services-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .services-grid .service-card:last-child {
+    grid-column: span 2;
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+}
+
+
+@media (max-width: 768px) {
+
+  header {
+    padding: 1rem 5%;
+
+    flex-direction: column;
+
+    gap: 0.8rem;
+  }
+
+  nav ul {
+    gap: 0.8rem;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+  }
+
+  nav a {
+    font-size: 0.75rem;
+  }
+
+
+  section {
+    padding: 6rem 5% 4rem;
+
+    min-height: auto;
+  }
+
+
+  #inicio {
+    min-height: 100vh;
+
+    padding-top: 9rem;
+  }
+
+
+  #inicio h1 {
+    font-size: 2.6rem;
+
+    letter-spacing: -1px;
+  }
+
+
+  #inicio p {
+    font-size: 1rem;
+  }
+
+
+  .hero-buttons {
+    flex-direction: column;
+
+    width: 100%;
+  }
+
+  .hero-buttons .btn {
+    width: 100%;
+  }
+
+
+  .services-mini-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .services-grid .service-card:last-child {
+    grid-column: auto;
+
+    max-width: none;
+  }
+
+
+  .plans-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  .about-container {
+    grid-template-columns: 1fr;
+
+    gap: 2rem;
+  }
+
+
+  .family-text h2 {
+    font-size: 2.2rem;
+  }
+
+
+  .contact-box {
+    padding: 2rem 1.3rem;
+  }
+
+}
+
+
+@media (max-width: 480px) {
+
+  .logo {
+    font-size: 1.3rem;
+  }
+
+  nav ul {
+    gap: 0.55rem;
+  }
+
+  nav a {
+    font-size: 0.7rem;
+  }
+
+  #inicio h1 {
+    font-size: 2.2rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .service-card,
+  .plan-card {
+    padding: 2rem 1.5rem;
+  }
+
+}
+/* Limitar el tamaño del logo */
+.site-logo {
+  max-height: 45px; /* Ajusta la altura máxima para que entre bien en la barra */
+  width: auto;       /* Mantiene la proporción original de la imagen */
+  display: block;
+}
+
+/* Alineación del contenedor del menú y del logo */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+/* Arreglo de precio tachado en los Planes */
+.plan-price {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+}
+
+.plan-price .old-price {
+  font-size: 1.1rem !important; /* Más chico que el precio actual */
+  color: #A9B8CC;
+  text-decoration: line-through; /* Línea tachada */
+  font-weight: 400;
+  opacity: 0.7;
+}
+
+/* Espaciado para que no se corte el botón */
+.plan-card {
+  padding-bottom: 2.5rem;
+}
